@@ -3,8 +3,8 @@ import requests
 from supabase import create_client
 
 # GitHub'daki gizli anahtarları okur
-url = os.environ.get("SUPABASE_URL")
-key = os.environ.get("SUPABASE_KEY")
+url = os.environ.get("https://ejcfcflotagcsiwxtfdf.supabase.co")
+key = os.environ.get("sb_publishable_YxE8PbdrX3y85WiGQr8BOQ_WnLynz8R")
 supabase = create_client(url, key)
 
 def fiyatlari_guncelle():
