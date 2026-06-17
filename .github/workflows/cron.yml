@@ -1,0 +1,19 @@
+name: Pazar Botu
+on:
+  schedule:
+    - cron: '0 * * * *' # Saat başı çalıştırır
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Python Kur
+        uses: actions/setup-python@v2
+        with: { python-version: '3.9' }
+      - name: Botu Çalıştır
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        run: |
+          pip install requests supabase
+          python bot.py
